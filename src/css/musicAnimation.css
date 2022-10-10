@@ -1,0 +1,57 @@
+.musicAnimation {
+    width: 70px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.visible, .stop, .play {
+    opacity: 1;
+    position: absolute;
+    top: 16%;
+    z-index: 10;
+    left: 80%;
+}
+
+.stop, .play {
+    top: 25%;
+    left: 82.5%;
+    cursor: pointer;
+    transform: scale(1.3);
+}
+
+ .musicAnimation span {
+    display: block;
+    background: #000;
+    border: 1px solid #fff;
+    height: 60px;
+    width: 10%;
+    border-radius: 20px;
+    animation: music 1.2s calc(1s * var(--i)) linear infinite;
+}
+
+@keyframes music {
+
+    0% {
+        background: #000;
+    }
+
+    50% {
+        height: 20%;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+@media(max-width: 600px) {
+    .musicAnimation {
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
