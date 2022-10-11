@@ -1,26 +1,19 @@
 import '../css/musicAnimation.css'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { DataContext } from '../hooks/DataContext'
 import Cancion from '../sources/song.mp3'
 
 const MusicAnimation = () => {
 
     const { theme } = useContext(DataContext)
-    const [pausa, setPausa] = useState(false)
-    const [playing, setPlaying] = useState(false)
     const song = new Audio(Cancion)
     
-    const paused = () => {
-        song.pause()
-        
-    }
-
+   
     useEffect(() => {
         if (theme) {
             song.play()
-            setPlaying(true)
         }
-    
+        // eslint-disable-next-line
     },[theme])
 
     
