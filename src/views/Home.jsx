@@ -79,6 +79,16 @@ const Home = () => {
         inicio = 'inicioCanvas'
     }
 
+    const queryButton = () => {
+        if ((!pokemon || list.length === 0) ||
+            (list.length > 0 && pokemon !== list[0].name && despliegue)) {
+            return true
+
+        } else {
+            return false
+        }
+    }
+
 
 
     return (
@@ -97,7 +107,7 @@ const Home = () => {
                     <div className='homeBackground'>
                         <Video />
                         <img src={Pikachu} alt="pikachu" className={
-                            window.location.href.includes('Home') ? 'noAnimation':
+                            window.location.href.includes('Home') ? 'noAnimation' :
                             'pikachu'
                         } />
                         <div className='form'>
@@ -109,10 +119,8 @@ const Home = () => {
                                 placeholder='BUSCA TU POKEMON...'
                             />
 
-                            <button onClick={buscar}
-                                disabled={((!pokemon || list.length === 0) ||
-                                    (list.length > 0 && pokemon !== list[0].name && despliegue))
-                                    ? true : false}>
+                            <button onClick={buscar} className={queryButton() ? 'queryDisabled': 'query' }
+                                disabled={queryButton() ? true : false}>
                                 Buscar
                             </button>
 

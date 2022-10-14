@@ -1,4 +1,14 @@
-* {
+@font-face {
+  font-family: silkscreen;
+  src: url(../src/sources/Silkscreen-Regular.ttf);
+}
+
+@font-face {
+  font-family: poppins;
+  src: url(../src/sources/Poppins-Regular.ttf)
+}
+
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;

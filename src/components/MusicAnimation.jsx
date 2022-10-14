@@ -12,6 +12,7 @@ const MusicAnimation = () => {
     useEffect(() => {
         if (theme) {
             song.play()
+            song.loop = true
         }
         // eslint-disable-next-line
     },[theme])

@@ -19,13 +19,14 @@
 .mainNavBar ul a {
     text-decoration: none;
     color: #fff;
-    width: 5em;
+    width: 8em;
     text-align: center;
     border-radius: 10px;
     height: 1.6em;
     line-height: 1.6em;
     transition: .5s;
     background: #000;
+    font-family: silkscreen;
 }
 
 .mainNavBar ul .active {
