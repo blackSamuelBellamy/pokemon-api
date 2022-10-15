@@ -8,32 +8,24 @@ const MusicAnimation = () => {
     const { theme } = useContext(DataContext)
     const song = new Audio(Cancion)
     
-   
     useEffect(() => {
         if (theme) {
             song.play()
             song.loop = true
         }
         // eslint-disable-next-line
-    },[theme])
-
-    
+    }, [theme])
 
     return (
-
-        <>
-            <div className={theme ? "musicAnimation visible" : "musicAnimation"}>
-                <span style={{ '--i': 0 }}></span>
-                <span style={{ '--i': .3 }}></span>
-                <span style={{ '--i': .6 }}></span>
-                <span style={{ '--i': .9 }}></span>
-                <span style={{ '--i': .6 }}></span>
-                <span style={{ '--i': .3 }}></span>
-                <span style={{ '--i': 0 }}></span>
-            </div>
-        
-        </>
-
+        <div className={theme? 'musicAnimation visible': 'musicAnimation noVisible'}>
+            <span style={{ '--i': 0 }}></span>
+            <span style={{ '--i': .3 }}></span>
+            <span style={{ '--i': .6 }}></span>
+            <span style={{ '--i': .9 }}></span>
+            <span style={{ '--i': .6 }}></span>
+            <span style={{ '--i': .3 }}></span>
+            <span style={{ '--i': 0 }}></span>
+        </div>
     )
 }
 

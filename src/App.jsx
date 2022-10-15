@@ -3,6 +3,7 @@ import { States } from './hooks/DataContext'
 import Planilla from './components/Planilla'
 import Home from './views/Home'
 import Pokemones from './views/Pokemones'
+import NotFound from './components/NotFound'
 import './App.css';
 
 const App = () => {
@@ -13,9 +14,10 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Planilla />}>
               <Route index element={<Home />} />
-              <Route path='/Home' element={<Home />} />
-              <Route path='/Pokemones' element={<Pokemones />} />
-              <Route path='/Pokemones/:pokemon' element={<Pokemones />} />
+              <Route path='/home' element={<Home />} />
+              <Route path='/pokemones' element={<Pokemones />} />
+              <Route path='/pokemones/:pokemon' element={<Pokemones />} />
+              <Route path='*' element= {NotFound} />
             </Route>
           </Routes>
         </BrowserRouter>

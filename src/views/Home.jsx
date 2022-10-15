@@ -11,7 +11,8 @@ import Pikachu from '../sources/pikachu.png'
 const Home = () => {
 
     const mainURL = 'https://pokeapi.co/api/v2/pokemon/'
-    const { data, setData, theme, setTheme, setSecondURL } = useContext(DataContext)
+    const { data, setData, theme, setTheme, setSecondURL, setNewFetch,
+        setSecondData } = useContext(DataContext)
     UseFetch(mainURL, setData)
 
     let inicio = 'mainHome'
@@ -35,6 +36,8 @@ const Home = () => {
             const pokeArray = data.results.filter(poke =>
                 poke.name.includes(pokemon.toLowerCase()))
             setList(pokeArray)
+            setNewFetch(false)
+            setSecondData([])
 
 
         } else {
@@ -47,6 +50,7 @@ const Home = () => {
             })
         }
 
+
     }
 
     const inputPokemon = e => {
@@ -55,20 +59,22 @@ const Home = () => {
     }
 
     const buscar = () => {
-        navigate(`/Pokemones/${pokemon}`)
-        const choosenPokemon = data.results.filter(pok => pok.name === pokemon)
+
+        setNewFetch(true)
+        const choosenPokemon = (data.results.filter(pok => pok.name === pokemon))
         setSecondURL(choosenPokemon[0].url)
+        navigate(`/Pokemones/${pokemon}`)
     }
+
 
     const noIntro = () => {
         if (
-            window.location.href.includes('Home') ||
-            window.location.href.includes('Pokemon') ||
-            window.location.href.includes('Contacto') ||
-            window.location.href.includes('Another')
-        ) {
+            window.location.href.includes('home') ||
+            window.location.href.includes('pokemones')) {
             return false
-        } else return true
+        } else {
+            return true
+        }
 
     }
 
@@ -101,14 +107,14 @@ const Home = () => {
                 </div>
             }
 
-            {(theme || window.location.href.includes('Home')) &&
+            {(theme || window.location.href.includes('home')) &&
 
                 <div className={inicio}>
                     <div className='homeBackground'>
                         <Video />
                         <img src={Pikachu} alt="pikachu" className={
-                            window.location.href.includes('Home') ? 'noAnimation' :
-                            'pikachu'
+                            window.location.href.includes('home') ? 'noAnimation' :
+                                'pikachu'
                         } />
                         <div className='form'>
 
@@ -119,7 +125,7 @@ const Home = () => {
                                 placeholder='BUSCA TU POKEMON...'
                             />
 
-                            <button onClick={buscar} className={queryButton() ? 'queryDisabled': 'query' }
+                            <button onClick={buscar} className={queryButton() ? 'queryDisabled' : 'query'}
                                 disabled={queryButton() ? true : false}>
                                 Buscar
                             </button>

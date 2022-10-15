@@ -1,0 +1,46 @@
+.error {
+    position: absolute;
+    height:  100%;
+    width: 100%;
+    background: #000;
+    z-index: 50;
+}
+
+.error::before {
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 250px;
+    background: url(../sources/notFound.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+}
+
+.error button {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10em;
+    height: 3em;
+    outline: none;
+    border: 2px solid #fff;
+    background: transparent;
+    cursor: pointer;
+    font-family: silkscreen;
+    transition: .4s;
+}
+
+.error button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.error button:hover {
+    background: rgba(255, 255, 255, .2);
+    text-shadow: 1px 1px #000;
+}

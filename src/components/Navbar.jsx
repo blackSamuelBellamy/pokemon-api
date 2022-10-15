@@ -11,13 +11,13 @@ const Navbar = () => {
     return (
         <>
             {(theme ||
-                window.location.href.includes('Home') ||
-                window.location.href.includes('Pokemones'))
+                window.location.href.includes('home') ||
+                window.location.href.includes('pokemones'))
                 &&
                 <nav className='mainNavBar'>
                     <ul>
-                        <NavLink to='/Home' className={changing}>Home</NavLink>
-                        <NavLink to='/Pokemones' className={changing}>Pokemones</NavLink>
+                        <NavLink to='/home' className={changing}>Home</NavLink>
+                        <NavLink to='/pokemones' className={changing}>Pokemones</NavLink>
 
                     </ul>
                 </nav>
