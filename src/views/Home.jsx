@@ -78,7 +78,7 @@ const Home = () => {
 
     }
 
-    if (window.location.href.includes('Home') && theme) {
+    if (window.location.href.includes('home') && theme) {
         inicio = 'mainHome'
 
     } else if (theme) {
