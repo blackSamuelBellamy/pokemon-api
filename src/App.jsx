@@ -17,7 +17,8 @@ const App = () => {
               <Route path='/home' element={<Home />} />
               <Route path='/pokemones' element={<Pokemones />} />
               <Route path='/pokemones/:pokemon' element={<Pokemones />} />
-              <Route path='*' element= {NotFound} />
+              <Route path='/Not-Found' element= {<NotFound />} />
+              <Route path='*' element= {<NotFound />} />
             </Route>
           </Routes>
         </BrowserRouter>

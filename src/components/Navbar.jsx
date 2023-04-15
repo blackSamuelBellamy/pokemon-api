@@ -11,8 +11,8 @@ const Navbar = () => {
     return (
         <>
             {(theme ||
-                window.location.href.includes('home') ||
-                window.location.href.includes('pokemones'))
+                window.location.href.toLowerCase().includes('home') ||
+                window.location.href.toLowerCase().includes('pokemones'))
                 &&
                 <nav className='mainNavBar'>
                     <ul>
