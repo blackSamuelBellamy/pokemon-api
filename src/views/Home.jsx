@@ -10,7 +10,7 @@ import Pikachu from '../sources/pikachu.png'
 
 const Home = () => {
 
-    const mainURL = 'https://pokeapi.co/api/v2/pokemon/'
+    const mainURL = 'https://pokeapi.co/api/v2/pokemon/?limit=150&offset=10'
     const { data, setData, theme, setTheme, setSecondURL, setNewFetch,
         setSecondData } = useContext(DataContext)
     UseFetch(mainURL, setData)
