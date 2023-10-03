@@ -135,10 +135,17 @@ const Home = () => {
                                     {list.map((poke, index) => (
 
                                         despliegue &&
-                                        <div key={index + poke.name}
+                                        <div 
+                                            key={index + poke.name}
                                             className='name'
-                                            onClick={inputPokemon}>
-                                            <p className='pokeName' lang='en'>{poke.name}</p>
+                                            onClick={inputPokemon}
+                                        >
+                                            <p className='pokeName' 
+                                                lang='en'
+                                                translate='no'
+                                            >
+                                                {poke.name}
+                                            </p>
                                         </div>
                                     ))}
                                 </div>}
