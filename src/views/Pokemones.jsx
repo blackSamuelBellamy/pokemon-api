@@ -24,7 +24,7 @@ const Pokemones = () => {
                (!loading && Object.entries(secondData).length > 0) &&
 
                 <div className='card'>
-                    <h3>{secondData.name}</h3>
+                    <h3 lang='en' translate='no'>{secondData.name}</h3>
                     <span className='effects'></span>
                     <div className='imageContainer'>
                         <img src={secondData.sprites.other.home.front_default} alt=

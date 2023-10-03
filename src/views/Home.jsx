@@ -140,7 +140,8 @@ const Home = () => {
                                             className='name'
                                             onClick={inputPokemon}
                                         >
-                                            <p className='pokeName' 
+                                            <p 
+                                                className='pokeName' 
                                                 lang='en'
                                                 translate='no'
                                             >
