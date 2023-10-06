@@ -118,14 +118,17 @@ const Home = () => {
                         } />
                         <div className='form'>
 
-                            <input type="text"
+                            <input 
+                                type="text"
                                 onChange={searchingPokemon}
                                 value={pokemon}
                                 autoFocus
                                 placeholder='BUSCA TU POKEMON...'
                             />
 
-                            <button onClick={buscar} className={queryButton() ? 'queryDisabled' : 'query'}
+                            <button 
+                                onClick={buscar} 
+                                className={queryButton() ? 'queryDisabled' : 'query'}
                                 disabled={queryButton() ? true : false}>
                                 Buscar
                             </button>

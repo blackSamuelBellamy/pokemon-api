@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { DataContext } from '../hooks/DataContext'
 import Video from '../components/Video'
 import '../css/pokemones.css'
@@ -11,6 +11,16 @@ const Pokemones = () => {
     const { secondData, setSecondData, newFetch, secondURL, loading }
         = useContext(DataContext)
     newFetch && UseFetch(secondURL, setSecondData)
+
+    useEffect(() => {
+        if(Object.entries(secondData).length > 0) {
+            const capitaliza = secondData.name.charAt(0).toLocaleUpperCase() + secondData.name.slice(1)
+            document.title = `Pokemon | ${capitaliza}`   
+            console.log(secondData.name)
+        }
+        else document.title = 'Pokemon | Api'
+        // eslint-disable-next-line
+    }, [secondData]) 
 
     return (
 
