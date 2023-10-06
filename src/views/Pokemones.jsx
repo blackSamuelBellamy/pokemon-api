@@ -14,9 +14,8 @@ const Pokemones = () => {
 
     useEffect(() => {
         if(Object.entries(secondData).length > 0) {
-            const capitaliza = secondData.name.charAt(0).toLocaleUpperCase() + secondData.name.slice(1)
-            document.title = `Pokemon | ${capitaliza}`   
-            console.log(secondData.name)
+            const capitalize = secondData.name.charAt(0).toLocaleUpperCase() + secondData.name.slice(1)
+            document.title = `Pokemon | ${capitalize}`   
         }
         else document.title = 'Pokemon | Api'
         // eslint-disable-next-line
